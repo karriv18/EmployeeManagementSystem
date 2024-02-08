@@ -7,36 +7,64 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" type="text/css" href="../../styles/views/general.css" />
-    <link rel="stylesheet" type="text/css" href="../../styles/views/dashboard.css" />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../styles/views/general.css"
+    />
+    <link
+      rel="stylesheet"
+      type="text/css"
+      href="../../styles/views/dashboard.css"
+    />
     <title>Dashboard</title>
-
   </head>
   <body>
-
     <%@ include file="../includes/sidebar.html" %>
     <main class="main">
       <div class="main-admin">
-        <h1>Hello, ${email}, ${name}</h1>
+        <h1>Hello, ${email}</h1>
       </div>
       <div class="main-content">
+        <h1>Employees</h1>
         <div class="employees">
-          <h1>Employees</h1>
-          <div class="Total-Employees">Total Employees</div>
-          <div class="Total-Admins">Total Admins</div>
-          <div class="Total-Department">Total Department</div>
-          <div class="Terminated-Employees">Terminated Employees</div>
+          
+          <div class="card Total-Employees">
+            <h2>Total Employees</h2>
+            <h2 class="employee-count">0</h2>
+          </div>
+          <div class="card Total-Admins">
+            <h2>Total Admins</h2>
+            <h2 class="admin-count">0</h2>
+          </div>
+          <div class="card Total-Department">
+            <h2>Total Department</h2>
+            <h2 class="department-count">0</h2>
+          </div>
+          <div class="card Terminated-Employees">
+            <h2>Terminated Employees</h2>
+            <h2 class="terminated-count">0</h2>
+          </div>
         </div>
-		
-        <div class="Task">
-          <h1>Task</h1>
-          <div class="Total-Task">Total Task</div>
-          <div class="Done-Task">Done Task</div>
-          <div class="Pending-Task">Pending Task</div>
+        
+        <h1>Task</h1>
+        <div class="task">
+          <div class="card Total-Task">
+            <h2>Total Task</h2>
+            <h2 class="task-count">0</h2>
+          </div>
+          <div class="card Done-Task">
+            <h2>Done Task</h2>
+            <h2 class="done-task-count">0</h2>
+          </div>
+          <div class="card Pending-Task">
+            <h2>Pending Task</h2>
+            <h2 class="pending-task-count">0</h2>
+          </div>
         </div>
+
       </div>
     </main>
-
-
   </body>
+  <script src="../../action/action.js"></script>
 </html>

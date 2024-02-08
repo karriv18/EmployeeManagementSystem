@@ -26,10 +26,10 @@ public class AdminServlet extends HttpServlet{
 		
 		boolean isExist = ad.selectAdmin(am);
 		PrintWriter out = res.getWriter();
-//		String name = "karl";
+
 		if (isExist) { 
 			session.setAttribute("email", email);
-//			req.setAttribute("name", name);
+
 			RequestDispatcher rd = req.getRequestDispatcher("/AdminDashboard");
 			rd.forward(req, res);
 			
