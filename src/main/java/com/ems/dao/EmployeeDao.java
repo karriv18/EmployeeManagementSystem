@@ -11,7 +11,9 @@ public class EmployeeDao extends WorkerDao {
 	private final String UPDATE_EMPLOYEE = "UPDATE employee "
 			+ "SET firstName = ?, middleName = ?, lastName = ?, email = ?, department = ?"
 			+ "WHERE id = ?;";
-	
+	private final String TERMINATE_EMPLOYEE = "INSERT INTO terminatedEmployees(firstName, middleName, lastName, email, department)"
+			+ "VALUES (?, ?, ?, ?, ?)";
+	private final String DELETE_EMPLOYEE ="DELETE FROM employee WHERE id = ?";
 	// Create
 	public void insertEmployee(EmployeeModel ed) {
 		try {
@@ -90,9 +92,33 @@ public class EmployeeDao extends WorkerDao {
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
-		
-		
 		return em;
-		
+	}
+	public void teminateEmployee(EmployeeModel em) {
+		try {
+			Connection conn = getConnection();
+			PreparedStatement ps = conn.prepareStatement(TERMINATE_EMPLOYEE);
+			ps.setString(1, em.getFirstName());
+			ps.setString(2, em.getMiddleName());
+			ps.setString(3, em.getLastName());
+			ps.setString(4, em.getEmail());
+			ps.setString(5, em.getDepartment());
+			ps.execute();
+			
+			deleteEmployee(em.getId());
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
+	public void deleteEmployee(int id) {
+		try {
+			Connection conn = getConnection(); 
+			PreparedStatement ps = conn.prepareStatement(DELETE_EMPLOYEE);
+			ps.setInt(1, id);
+			ps.execute();
+			System.out.println("DELETED");
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
 	}
 }	

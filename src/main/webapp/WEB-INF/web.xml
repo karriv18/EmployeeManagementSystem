@@ -38,4 +38,14 @@
   	<servlet-name>EmployeeUpdateServlet</servlet-name>
   	<url-pattern>/editEmployee</url-pattern>
   </servlet-mapping>
+  
+  <servlet>
+  	<servlet-name>DeleteEmployee</servlet-name>
+  	<servlet-class>com.ems.controller.DeleteEmployeeServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>DeleteEmployee</servlet-name>
+  	<url-pattern>/deleteEmployee</url-pattern>
+  </servlet-mapping>
+  
 </web-app>

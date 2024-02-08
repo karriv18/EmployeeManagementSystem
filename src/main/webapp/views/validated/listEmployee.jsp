@@ -7,7 +7,6 @@
 <%
 	WorkerDao wd = new WorkerDao();
 	List <WorkerModel> employeeList = wd.getAllEmployees();
-	
 %>
 <!DOCTYPE html>
 <html>
@@ -31,6 +30,8 @@
 		</tr>
 		</thead>
 		<% for(int i = 0; i < employeeList.size(); i++){ %>
+		<% int id = employeeList.get(i).getId(); %>
+		
 		<tr>
 			<td><%= employeeList.get(i).getId() %> </td>
 			<td><%= employeeList.get(i).getFirstName()%></td>
@@ -40,6 +41,15 @@
 			<td><%= employeeList.get(i).getDepartment() %></td>
 			<td>
 				<a href="editEmployee.jsp?id=<%= employeeList.get(i).getId()%>">Edit</a>
+				<form action="<%= request.getContextPath() %>/deleteEmployee" method="post">
+					<input type="hidden" name="id" value="<%= id %>" /> 
+					<input type="hidden" name="firstName" value="<%=  employeeList.get(i).getFirstName() %>" />
+					<input type="hidden" name="middleName" value="<%=  employeeList.get(i).getMiddleName() %>" />
+					<input type="hidden" name="lastName" value="<%=  employeeList.get(i).getLastName() %>" />
+					<input type="hidden" name="email" value="<%= employeeList.get(i).getEmail() %>" />
+					<input type="hidden" name="department" value="<%=  employeeList.get(i).getDepartment() %>" />
+					<button submit>Delete</button>
+				</form>
 			</td>
 		</tr>
 		<% } %>
