@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>Welcome</title>
+    <link rel="stylesheet" type="text/css" href="styles/views/general.css" />
+    <link rel="stylesheet" type="text/css" href="styles/views/index.css" />
+  </head>
+  <body>
+    <!-- Header -->
+    <header class="header">
+      <div class="left-section">
+        <h1 class="logo">Company</h1>
+      </div>
+      <div class="middle-section">
+        <a href="#" class="link">Home</a>
+        <a href="#" class="link">Clients</a>
+        <a href="#" class="link">Careers</a>
+      </div>
+      <div class="right-section">
+        <button class="login-btn" id="login-btn">Login</button>
+        <button class="apply-btn" id="apply-btn">Apply</button>
+      </div>
+    </header>
+
+    <!-- Main -->
+    <main class="main">
+      <div class="main-text">
+        <h1 class="main-header">Lorem ipsum dolor sit amet</h1>
+        <p class="main-paragraph">
+          Veniam ex maxime incidunt aperiam sed quod provident mollitia
+          quibusdam cupiditate odit? Ipsam ullam corrupti libero sequi, quisquam
+          vero sit quod quos?
+        </p>
+      </div>
+      <div class="main-image">
+        <img class="main-image-logo" src="./images/office.svg" alt="" />
+      </div>
+    </main>
+
+    <!-- Forms  -->
+    <div class="login-div" id="login-div">
+      
+      <div class="login-container">
+        <button class="close-login-btn">&#x2715;</button>
+        <img src="images/laptop-login.svg" alt="">
+        <form action="adminValidation" id="login-form" class="login-form" method="post">
+          <h1>Login</h1>
+          <input type="text" placeholder="Email" name="email" /><br />
+          <input type="password" placeholder="Password" name="password" /><br />
+          <button type="submit" class="login-submit-btn">Log In</button>
+          <a href="#">Forget your password</a>
+        </form>
+      </div>
+    </div>
+	
+    <div class="apply-div" id="apply-div">
+      <form action="" id="apply-form" class="apply-form"">
+        <input type="text" placeholder="First Name" name="firstName" />
+        <input type="text" placeholder="Middle Name" name="middleName" />
+        <input type="text" placeholder="Last Name" name="lastName" />
+        <input type="text" placeholder="Department" name="department" />
+        <input type="email" placeholder="Email" name="email" />
+        <input type="password" placeholder="Confirm Password" name="confPassword" />
+        <input type="password" placeholder="Password" name="password" />
+        <button type="submit">Apply</button>
+      </form>
+    </div>
+  </body>
+  <script src="action/action.js"></script>
+</html>

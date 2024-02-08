@@ -1,0 +1,30 @@
+body{
+  background-color: #c9d8e6;
+  padding-left: 30vh;
+}
+.sidebar{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+  background: linear-gradient(1deg, #266396, #6098ba);
+  width: 18%;
+  position: fixed;
+  top: 0;
+  bottom: 0;
+  color: white;
+}
+.sidebar .top-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+ .top-section .profile-pic{
+  width: 20vh;
+}
+.sidebar{
+  position: fixed;
+  left: 0;
+  width: 30vh;
+}
