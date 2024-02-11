@@ -29,12 +29,8 @@ public class AdminServlet extends HttpServlet{
 
 		if (isExist) { 
 			session.setAttribute("email", email);
-
 			RequestDispatcher rd = req.getRequestDispatcher("/AdminDashboard");
 			rd.forward(req, res);
-			
-			System.out.println(session.getAttribute("email"));
-			
 			
 		} else {
 			res.sendRedirect("views/apply.html");

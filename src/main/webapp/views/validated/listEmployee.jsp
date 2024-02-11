@@ -7,6 +7,8 @@
 <%
 	WorkerDao wd = new WorkerDao();
 	List <WorkerModel> employeeList = wd.getAllEmployees();
+	String name = "karl";
+	int i = 0; 
 %>
 <!DOCTYPE html>
 <html>
@@ -29,7 +31,7 @@
 	        <th>Actions</th>
 		</tr>
 		</thead>
-		<% for(int i = 0; i < employeeList.size(); i++){ %>
+		<% for(; i < employeeList.size(); i++){ %>
 		<% int id = employeeList.get(i).getId(); %>
 		
 		<tr>
@@ -48,11 +50,12 @@
 					<input type="hidden" name="lastName" value="<%=  employeeList.get(i).getLastName() %>" />
 					<input type="hidden" name="email" value="<%= employeeList.get(i).getEmail() %>" />
 					<input type="hidden" name="department" value="<%=  employeeList.get(i).getDepartment() %>" />
-					<button submit>Delete</button>
+					<button type="submit">Delete</button>
 				</form>
 			</td>
 		</tr>
 		<% } %>
+
 	</table>
 </body>
 <script src="../../action/action.js"></script>

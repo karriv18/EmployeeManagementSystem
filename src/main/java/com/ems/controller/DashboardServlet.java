@@ -14,7 +14,8 @@ import com.ems.dao.AdminDao;
 public class DashboardServlet extends HttpServlet{
 	
 	public void service(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
-
+		
+//		req.getAttribute("name");
 		res.sendRedirect("views/validated/dashboard.jsp");
 	}
 }
