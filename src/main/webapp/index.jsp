@@ -26,12 +26,14 @@
     <!-- Main -->
     <main class="main">
       <div class="main-text">
+      	
         <h1 class="main-header">Lorem ipsum dolor sit amet</h1>
         <p class="main-paragraph">
           Veniam ex maxime incidunt aperiam sed quod provident mollitia
           quibusdam cupiditate odit? Ipsam ullam corrupti libero sequi, quisquam
           vero sit quod quos?
         </p>
+        
       </div>
       <div class="main-image">
         <img class="main-image-logo" src="./images/office.svg" alt="" />

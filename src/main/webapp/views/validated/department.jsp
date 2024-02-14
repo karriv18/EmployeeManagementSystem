@@ -7,7 +7,7 @@
 <title>Departments</title>
 </head>
 <body>
-	<%@ include file="../includes/sidebar.html" %>
+	<%@ include file="../includes/sidebar.jsp" %>
 	<table>
 	<h1>Department List</h1>
 		<thead>

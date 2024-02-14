@@ -41,7 +41,7 @@ public class AdminServlet extends HttpServlet{
 		}
 		
 		if (!isExist) {
-			error = "User does not exist!";
+			error = "Wrong Credentials";
 			errorSetting(req, res, error);
 			return;
 		}

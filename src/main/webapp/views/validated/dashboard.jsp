@@ -20,7 +20,7 @@
     <title>Dashboard</title>
   </head>
   <body>
-    <%@ include file="../includes/sidebar.html" %>
+    <%@ include file="../includes/sidebar.jsp" %>
     <main class="main">
       <div class="main-admin">
         <h1>Hello, ${email}</h1>

@@ -12,7 +12,7 @@
 <title>Add Employee</title>
 </head>
 <body>
-	<%@ include file="../includes/sidebar.html" %>
+	<%@ include file="../includes/sidebar.jsp" %>
 	    <form action="<%= request.getContextPath() %>/employeeServlet" method="post">
     	<h1>Add Employee</h1>
     	<input type="text" placeholder="First Name" name="firstName"/><br />

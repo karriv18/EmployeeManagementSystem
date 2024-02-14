@@ -1,11 +1,18 @@
+<%
+	response.setHeader("Cache-Control", "no-cache, no-store, must-revalidate");
+
+if (session.getAttribute("email") == null){
+	response.sendRedirect("../../index.jsp");
+}
+%>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="../../styles/views/dashboard.css" />
-    <link rel="stylesheet" href="../../styles/views/general.css" />
-    <link rel="stylesheet" href="../../styles/includes/sidebar.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/styles/views/dashboard.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/styles/views/general.css" />
+    <link rel="stylesheet" href="<%= request.getContextPath() %>/styles/includes/sidebar.css" />
     <link
       rel="stylesheet"
       href="https://cdn-uicons.flaticon.com/2.1.0/uicons-regular-rounded/css/uicons-regular-rounded.css"
@@ -46,7 +53,7 @@
         </ul>
       </div>
       <div class="bottom-section" id="bottom-section">
-        <form action="">
+        <form action="<%= request.getContextPath() %>/LogoutAdmin" method="get">
           <button type="submit">
             <i class="fi fi-rr-sign-out-alt"></i>Logout
           </button>

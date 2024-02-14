@@ -48,4 +48,12 @@
   	<url-pattern>/deleteEmployee</url-pattern>
   </servlet-mapping>
   
+  <servlet>
+  	<servlet-name>LogoutAdmin</servlet-name>
+  	<servlet-class>com.ems.controller.LogoutServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+  	<servlet-name>LogoutAdmin</servlet-name>
+  	<url-pattern>/LogoutAdmin</url-pattern>
+  </servlet-mapping>
 </web-app>
