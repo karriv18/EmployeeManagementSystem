@@ -19,11 +19,6 @@ public class AdminDao extends WorkerDao{
 			
 			ResultSet rs = ps.executeQuery();
 			
-			/*
-			 * while(rs.next()) { String email = rs.getString("email"); String password =
-			 * rs.getString("password"); System.out.println( email + " " + password); }
-			 */
-			
 			if (!rs.next()) {
 				System.out.println("wala tanga");
 				System.out.println(false);

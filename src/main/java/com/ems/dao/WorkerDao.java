@@ -4,9 +4,9 @@ import java.sql.*;
 import java.util.List; 
 import java.util.ArrayList;
 public class WorkerDao {
-	protected final String DB_URL = "jdbc:mysql://localhost/ems";
-	protected final String DB_UNAME = "root"; 
-	protected final String DB_PASS = ""; 
+	protected static final String DB_URL = "jdbc:mysql://localhost/ems";
+	protected static final String DB_UNAME = "root"; 
+	protected static final String DB_PASS = ""; 
 	
 	protected final String SELECT_ALL_EMPLOYEES = "SELECT * FROM employee";
 

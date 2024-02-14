@@ -15,27 +15,46 @@ public class AdminServlet extends HttpServlet{
 	
 	private AdminDao ad = new AdminDao();
 	
-	public AdminServlet() {}
+	public AdminServlet() { super(); }
 	
 	public void doPost(HttpServletRequest req, HttpServletResponse res) throws IOException, ServletException {
+		req.setAttribute("error", null);
 		String email = req.getParameter("email");
 		String password = req.getParameter("password");
 		
+		PrintWriter out = res.getWriter();
 		HttpSession session = req.getSession();
 		AdminModel am = new AdminModel(0, email, password);
 		
 		boolean isExist = ad.selectAdmin(am);
-		PrintWriter out = res.getWriter();
-
-		if (isExist) { 
-			session.setAttribute("email", email);
-			RequestDispatcher rd = req.getRequestDispatcher("/AdminDashboard");
-			rd.forward(req, res);
-			
-		} else {
-			res.sendRedirect("views/apply.html");
-			System.out.println("Waley");
+		String error = " ";
+		
+		if (email.isEmpty()) {
+			error = "Empty fields are not allowed";
+			errorSetting(req, res, error);
+			return;
+		}
+		if (password.isEmpty()) {
+			error = "Empty fields are not allowed";
+			errorSetting(req, res, error);
+			return;
 		}
 		
+		if (!isExist) {
+			error = "User does not exist!";
+			errorSetting(req, res, error);
+			return;
+		}
+
+		session.setAttribute("email", email);
+		RequestDispatcher rd = req.getRequestDispatcher("/AdminDashboard");
+		rd.forward(req, res);
+	}
+	public String errorSetting(HttpServletRequest req, HttpServletResponse res, String error) throws ServletException, IOException {
+		req.setAttribute("error", error);
+		RequestDispatcher rd = req.getRequestDispatcher("views/form/login.jsp");
+		rd.forward(req, res);
+//		req.setAttribute("error", "");
+		return error;
 	}
 }

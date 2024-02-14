@@ -23,9 +23,6 @@ public class EmployeeServlet extends HttpServlet {
         // TODO Auto-generated constructor stub
     }
 
-	/**
-	 * @see HttpServlet#doPost(HttpServletRequest request, HttpServletResponse response)
-	 */
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		// TODO Auto-generated method stub
 		String firstName = request.getParameter("firstName");
@@ -40,6 +37,7 @@ public class EmployeeServlet extends HttpServlet {
 		ed.insertEmployee(em);
 //		RequestDispatcher rd = request.getRequestDispatcher("/adminServlet");
 //		rd.forward(request, response);
+		
 		response.sendRedirect("views/validated/dashboard.jsp");
 	}
 

@@ -13,7 +13,7 @@
 		<thead>
 			<tr>
 				<th>ID</th>
-				<th>Name</th>
+				<th>Department</th>
 				<th>Date Added</th>
 				<th>Personnel</th>
 				<th>Action</th>
@@ -25,8 +25,13 @@
 				<td></td>
 				<td></td>
 				<td></td>
+				<td>
+					<button>Edit</button>
+					<button>Delete</button>
+				</td>
 			</tr>
 		</tbody>
 	</table>
+	<a href="#">Add Department</a>
 </body>
 </html>

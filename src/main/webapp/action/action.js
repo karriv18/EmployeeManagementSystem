@@ -3,6 +3,7 @@ let apply_btn = document.getElementById("apply-btn");
 let login_form = document.getElementById("login-div");
 let apply_form = document.getElementById("apply-div");
 let close_btn = document.querySelector(".close-login-btn");
+let form_submit = document.querySelector(".login-submit-btn");
 
 login_btn.addEventListener("click", () => {
   login_form.style.visibility = "visible";
@@ -20,6 +21,23 @@ let edit_employee = document.querySelector(".edit-employee-btn");
 let delete_employee = document.querySelector(".delete-employee-btn");
 
 edit_employee.addEventListener("click", () => {
-	
 	console.log("clicked")
+})
+
+form_submit.addEventListener("submit", (event) => {
+	event.preventDefault();
+	
+	let formData = new FormData(this);
+	
+	fetch("adminValidation",{
+		method: "POST", 
+		body: formData
+	})
+	.then(response => response.json())
+	.then(data => {
+		if(data.error){
+			alert("Error")
+		}
+	})
+	.catch(error => console.log("error", error))
 })
