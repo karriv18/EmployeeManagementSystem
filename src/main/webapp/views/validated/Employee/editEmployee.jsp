@@ -19,7 +19,7 @@
 <title>Edit Employee</title>
 </head>
 <body>
-	<%@ include file="../includes/sidebar.jsp" %>
+	<%@ include file="../../includes/sidebar.jsp" %>
 	<h1>Update Employee</h1>
 	<table>
 		<thead>

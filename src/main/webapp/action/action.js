@@ -23,21 +23,3 @@ let delete_employee = document.querySelector(".delete-employee-btn");
 edit_employee.addEventListener("click", () => {
 	console.log("clicked")
 })
-
-form_submit.addEventListener("submit", (event) => {
-	event.preventDefault();
-	
-	let formData = new FormData(this);
-	
-	fetch("adminValidation",{
-		method: "POST", 
-		body: formData
-	})
-	.then(response => response.json())
-	.then(data => {
-		if(data.error){
-			alert("Error")
-		}
-	})
-	.catch(error => console.log("error", error))
-})

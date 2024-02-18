@@ -6,8 +6,8 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<link rel="stylesheet" href="<%= request.getContextPath() %>/styles/form/login.css" />
-<link rel="stylesheet" href="<%= request.getContextPath() %>/styles/views/general.css" />
+<!-- <link rel="stylesheet" href="<%= request.getContextPath() %>/styles/form/login.css" />  -->
+<!--  <link rel="stylesheet" href="<%= request.getContextPath() %>/styles/views/general.css" /> -->
 <title>Login</title>
 </head>
 <body>
@@ -17,7 +17,7 @@
           <h1>Login</h1>
           <input type="text" placeholder="Email" name="email" />
          <input type="password" placeholder="Password" name="password" />
-          <p class="error-message" style="color: red;">${error} </p>
+          <p class="error-message" style="color: red;">${error}<p>
           <button type="submit" class="login-submit-btn">Log In</button>
           <a href="#">Forget your password</a>
         </form>

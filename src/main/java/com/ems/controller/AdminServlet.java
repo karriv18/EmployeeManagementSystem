@@ -27,7 +27,7 @@ public class AdminServlet extends HttpServlet{
 		AdminModel am = new AdminModel(0, email, password);
 		
 		boolean isExist = ad.selectAdmin(am);
-		String error = " ";
+		String error = "";
 		
 		if (email.isEmpty()) {
 			error = "Empty fields are not allowed";
@@ -45,7 +45,7 @@ public class AdminServlet extends HttpServlet{
 			errorSetting(req, res, error);
 			return;
 		}
-
+		
 		session.setAttribute("email", email);
 		RequestDispatcher rd = req.getRequestDispatcher("/AdminDashboard");
 		rd.forward(req, res);

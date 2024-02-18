@@ -7,6 +7,8 @@ public class AdminDao extends WorkerDao{
 	protected final String DB_PASS = ""; 
 	
 	private final String SELECT_ADM = "SELECT email, password FROM admin WHERE email = ? AND password = ?;";
+	private final String INSERT_ADMIN = "INSERT INTO admininformation(firstName, lastName, middleName, birthDate) "
+										+ "VALUES (?, ?, ?, ?, ?)";
 	
 	public boolean selectAdmin(AdminModel am){
 		boolean isExist = false;
@@ -20,14 +22,10 @@ public class AdminDao extends WorkerDao{
 			ResultSet rs = ps.executeQuery();
 			
 			if (!rs.next()) {
-				System.out.println("wala tanga");
 				System.out.println(false);
 				return false;
 			}
-			String email = rs.getString("email");
-			String password = rs.getString("password");
-			System.out.println(email + " " + password);
-			System.out.println(true);
+
 			return true;
 		} catch(Exception e) {
 			e.printStackTrace();
@@ -36,4 +34,16 @@ public class AdminDao extends WorkerDao{
 
 	}
 	
+	public void insertAdmin(AdminModel am) {
+		try {
+			Connection conn = getConnection();
+			PreparedStatement ps = conn.prepareStatement("");
+			ps.setString(1, am.getFirstName());
+			ps.setString(2, am.getLastName());
+			ps.setString(3, am.getMiddleName());
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+	}
 }
