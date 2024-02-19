@@ -34,8 +34,8 @@ if (session.getAttribute("email") == null){
           />
         </div>
         <div class="name-container">
-          <p class="name">Karl Clarence Rivera</p>
-          <p class="email">karl@gmail.com</p>
+          <p class="name"></p>
+          <p class="email"></p>
         </div>
       </div>
       <div class="middle-section" id="middle-section">
@@ -44,32 +44,37 @@ if (session.getAttribute("email") == null){
             <a href="#"><i class="fi fi-rr-user"></i>Profile</a>
           </li>
           <li>
-            <a href="../validated/dashboard.jsp"
+            <a href="<%= request.getContextPath() %>/views/validated/dashboard.jsp"
               ><i class="fi fi-rr-dashboard"></i>Dashboard</a
             >
           </li>
           <li>
-          	<a href="#"><i class="fi fi-rr-bars-sort"></i>Admin List
+          	<a href="<%= request.getContextPath() %>/views/validated/Admin/listAdmin.jsp">
+          	<i class="fi fi-rr-bars-sort"></i>
+          		Admin List
           	</a>
           </li>
-          <li><a href="#"><i class="fi fi-rr-admin-alt"></i>Add Admin</a></li>
+          <li><a href="<%= request.getContextPath() %>/views/validated/Admin/addAdmin.jsp">
+          <i class="fi fi-rr-admin-alt"></i>Add Admin</a></li>
           <li>
-            <a href="../validated/listEmployee.jsp"
-              ><i class="fi fi-rr-list"></i>Employee List</a
-            >
+            <a href="<%= request.getContextPath() %>/views/validated/Employee/listEmployee.jsp"
+              ><i class="fi fi-rr-list"></i>
+              Employee List
+              </a>
           </li>
 		  <li>
-            <a href="../validated/addEmployee.jsp"
+            <a href="<%= request.getContextPath() %>/views/validated/Employee/addEmployee.jsp"
               ><i class="fi fi-rr-user-add"></i>Add Employee</a
             >
           </li>
           <li>
-            <a href="../validated/department.jsp"
+            <a href="<%= request.getContextPath() %>/views/validated/Department/department.jsp"
               ><i class="fi fi-rr-split"></i>Department</a
             >
           </li>
           <li>
-          	<a href="#"><i class="fi fi-rr-code-branch"></i>Add Department</a>
+          	<a href="<%= request.getContextPath() %>/views/validated/Department/addDepartment.jsp">
+          	<i class="fi fi-rr-code-branch"></i>Add Department</a>
           </li>
           
         </ul>

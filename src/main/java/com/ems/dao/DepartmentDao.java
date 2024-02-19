@@ -28,14 +28,14 @@ public class DepartmentDao {
 			ps.setString(1, dm.getName());
 			
 			row  = ps.executeUpdate();
-			
+			System.out.println("Inserted");
 		} catch(Exception e) {
 			e.printStackTrace();
 		}
 		return row; 
 	}
 	
-	public List<DepartmentModel> getAllDepartment(DepartmentModel dm){
+	public List<DepartmentModel> getAllDepartment(){
 		List<DepartmentModel> list = new ArrayList<>();
 		try {
 			Connection conn = getConnection();
@@ -43,11 +43,11 @@ public class DepartmentDao {
 			ResultSet rs = ps.executeQuery();
 			
 			while(rs.next()) {
-				DepartmentModel dm2 = new DepartmentModel();
-				dm2.setId(rs.getInt("id"));
-				dm2.setName(rs.getString("name"));
-				dm2.setPersonelId(rs.getInt("personel_id"));
-				list.add(dm2);
+				DepartmentModel dm = new DepartmentModel();
+				dm.setId(rs.getInt("id"));
+				dm.setName(rs.getString("name"));
+				dm.setPersonelId(rs.getInt("personel_id"));
+				list.add(dm);
 			}
 		} catch(Exception e) {
 			e.printStackTrace();

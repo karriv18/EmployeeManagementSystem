@@ -1,5 +1,14 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@ page import="com.ems.dao.DepartmentDao" %>
+<%@ page import="com.ems.model.DepartmentModel" %>
+<%@	page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
+<% 
+	DepartmentDao dd = new DepartmentDao();
+	List<DepartmentModel> ldm = dd.getAllDepartment();
+	
+%>
 <!DOCTYPE html>
 <html>
 <head>
@@ -20,9 +29,10 @@
 			</tr>
 		</thead>
 		<tbody>
+		<% for(int i = 0; i < ldm.size(); i++) {%>
 			<tr>
-				<td></td>
-				<td></td>
+				<td><%= ldm.get(i).getId()%></td>
+				<td><%= ldm.get(i).getName()%></td>
 				<td></td>
 				<td></td>
 				<td>
@@ -30,8 +40,9 @@
 					<button>Delete</button>
 				</td>
 			</tr>
+		<% } %>
 		</tbody>
 	</table>
-	<a href="#">Add Department</a>
+	<a href="addDepartment.jsp">Add Department</a>
 </body>
 </html>
